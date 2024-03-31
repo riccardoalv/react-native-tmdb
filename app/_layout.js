@@ -1,11 +1,9 @@
-import { Stack } from "expo-router";
+import { Stack } from "expo-router/stack";
 
-const Layout = () => {
+export default function AppLayout() {
   return (
-    <Stack initialRouteName="home">
-      <Stack.Screen name="home" />
+    <Stack>
+      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
     </Stack>
   );
-};
-
-export default Layout;
+}
