@@ -23,7 +23,9 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
-    "prettier": "^3.2.5"
+    "dotenv": "^16.4.5",
+    "prettier": "^3.2.5",
+    "react-native-dotenv": "^3.4.11"
   },
   "private": true
 }
