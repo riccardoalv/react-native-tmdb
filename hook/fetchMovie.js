@@ -5,7 +5,7 @@ const API_TOKEN = process.env.API_TOKEN;
 
 const fetchMovie = (id) => {
   const [data, setData] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
   const options = {
@@ -18,8 +18,6 @@ const fetchMovie = (id) => {
   };
 
   const fetchData = async () => {
-    setIsLoading(true);
-
     try {
       const response = await axios.request(options);
 
