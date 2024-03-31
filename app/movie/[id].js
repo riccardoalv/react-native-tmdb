@@ -4,6 +4,7 @@ import {
   TouchableOpacity,
   ActivityIndicator,
   Image,
+  ScrollView,
 } from "react-native";
 import { COLORS, SIZES } from "../../constants";
 import { BookmarkIcon, BookmarkIconFilled } from "../../assets/icons";
@@ -90,7 +91,7 @@ export default function Tab() {
       ) : error ? (
         <Text>Something went wrong</Text>
       ) : (
-        <View>
+        <ScrollView style={{ marginBottom: 50 }}>
           <Image src={data.backdrop_path} style={styles.posterImage} />
           <View
             style={{
@@ -146,7 +147,7 @@ export default function Tab() {
               <DisplayTabContent />
             </View>
           </View>
-        </View>
+        </ScrollView>
       )}
     </View>
   );
