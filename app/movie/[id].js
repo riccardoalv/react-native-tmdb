@@ -17,6 +17,7 @@ import fetchMovie from "../../hook/fetchMovie";
 import { MovieTabs } from "../../components";
 import { useState } from "react";
 import styles from "../../style/detail/detail.style";
+import { Reviews } from "../../components";
 
 export default function Tab() {
   const router = useRouter();
@@ -45,7 +46,7 @@ export default function Tab() {
         );
 
       case "Reviews":
-        return <Text>reviews</Text>;
+        return <Reviews id={params.id} />;
 
       case "Cast":
         return <Text>cast</Text>;
