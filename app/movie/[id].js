@@ -5,7 +5,7 @@ import {
   ActivityIndicator,
   Image,
 } from "react-native";
-import { COLORS } from "../../constants";
+import { COLORS, SIZES } from "../../constants";
 import { BookmarkIcon, BookmarkIconFilled } from "../../assets/icons";
 import { Stack, useLocalSearchParams, useRouter } from "expo-router";
 import { FontAwesome6 } from "@expo/vector-icons";
@@ -13,8 +13,9 @@ import { Feather } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import { MovieCard } from "../../components";
 import fetchMovie from "../../hook/fetchMovie";
-import DetailTabs from "../../components/DetailTab";
+import { MovieTabs } from "../../components";
 import { useState } from "react";
+import styles from "../../style/detail/detail.style";
 
 export default function Tab() {
   const router = useRouter();
@@ -27,7 +28,20 @@ export default function Tab() {
   const DisplayTabContent = () => {
     switch (activeTab) {
       case "About Movie":
-        return <Text>{data.overview}</Text>;
+        return (
+          <Text
+            style={{
+              fontSize: 18,
+              textAlign: "left",
+              color: COLORS.text,
+              fontWeight: "normal",
+              fontFamily: "Poppins",
+              marginHorizontal: 30,
+            }}
+          >
+            {data.overview}
+          </Text>
+        );
 
       case "Reviews":
         return <Text>reviews</Text>;
@@ -54,6 +68,7 @@ export default function Tab() {
           headerShadowVisible: false,
           headerTintColor: COLORS.titleText,
           headerTitleAlign: "center",
+          headerTitleStyle: styles.headerTitle,
           headerStyle: {
             backgroundColor: COLORS.background,
             borderBottomWidth: 0,
@@ -75,29 +90,58 @@ export default function Tab() {
       ) : error ? (
         <Text>Something went wrong</Text>
       ) : (
-        <View style={{}}>
-          <Image
-            src={data.backdrop_path}
+        <View>
+          <Image src={data.backdrop_path} style={styles.posterImage} />
+          <View
             style={{
-              width: "100%",
-              height: 300,
+              marginTop:
+                SIZES.posterImage.height -
+                (SIZES.cards.height / 2) * SIZES.detailScaleFactor,
             }}
-          />
-          <MovieCard uri={data.poster_path} scale={1.2} />
-          <Text style={{ color: COLORS.grey }}>{data.original_title}</Text>
-          <Feather name="calendar" size={24} color={COLORS.grey} />
-          <Text style={{ color: COLORS.grey }}>
-            {data.release_date.slice(0, 4)}
-          </Text>
-          <Feather name="clock" size={24} color={COLORS.grey} />
-          <Ionicons name="ticket-outline" size={24} color={COLORS.grey} />
-          <Text style={{ color: COLORS.grey }}>{data.genres[0].name}</Text>
-          <DetailTabs
-            tabs={tabs}
-            activeTab={activeTab}
-            setActiveTab={setActiveTab}
-          />
-          <DisplayTabContent />
+          >
+            <View style={styles.cardAndTitle}>
+              <MovieCard
+                uri={data.poster_path}
+                scale={SIZES.detailScaleFactor}
+              />
+              <Text style={styles.title}> {data.original_title} </Text>
+            </View>
+            <View style={styles.movieInfo.container}>
+              <Feather
+                style={styles.movieInfo.icon}
+                name="calendar"
+                size={24}
+                color={COLORS.grey}
+              />
+              <Text style={styles.movieInfo.text}>
+                {data.release_date.slice(0, 4)}
+              </Text>
+              <Feather
+                style={styles.movieInfo.icon}
+                name="clock"
+                size={24}
+                color={COLORS.grey}
+              />
+              <Text style={styles.movieInfo.text}>{data.runtime}</Text>
+              <Ionicons
+                style={styles.movieInfo.icon}
+                name="ticket-outline"
+                size={24}
+                color={COLORS.grey}
+              />
+              <Text style={[styles.movieInfo.text, { borderRightWidth: 0 }]}>
+                {data.genres[0].name}
+              </Text>
+            </View>
+            <View>
+              <MovieTabs
+                tabs={tabs}
+                activeTab={activeTab}
+                setActiveTab={setActiveTab}
+              />
+              <DisplayTabContent />
+            </View>
+          </View>
         </View>
       )}
     </View>

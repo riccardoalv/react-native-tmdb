@@ -4,4 +4,8 @@ export const SIZES = {
     height: 140,
     borderRadius: 16,
   },
+  posterImage: {
+    height: 300,
+  },
+  detailScaleFactor: 1.2,
 };
