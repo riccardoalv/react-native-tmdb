@@ -99,6 +99,10 @@ export default function Tab() {
                 (SIZES.cards.height / 2) * SIZES.detailScaleFactor,
             }}
           >
+            <View style={styles.rating.container}>
+              <Feather name="star" size={20} color={COLORS.golden} />
+              <Text style={styles.rating.text}>{data.vote_average}</Text>
+            </View>
             <View style={styles.cardAndTitle}>
               <MovieCard
                 uri={data.poster_path}

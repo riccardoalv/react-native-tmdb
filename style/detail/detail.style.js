@@ -26,6 +26,25 @@ const styles = StyleSheet.create({
     color: COLORS.text,
     fontSize: 24,
   },
+  rating: {
+    container: {
+      justifyContent: "center",
+      alignItems: "center",
+      position: "absolute",
+      marginLeft: "70%",
+      marginTop: SIZES.cards.height / 2 - 40,
+      flexDirection: "row",
+      backgroundColor: "rgba(36, 42, 50, 0.8)",
+      padding: 5,
+      borderRadius: 20,
+    },
+    text: {
+      marginLeft: 5,
+      color: COLORS.golden,
+      fontSize: 16,
+      fontWeight: "bold",
+    },
+  },
   movieInfo: {
     container: {
       flexDirection: "row",
@@ -34,10 +53,10 @@ const styles = StyleSheet.create({
     },
     icon: {
       margin: 5,
-      marginLeft: 20,
+      marginLeft: 10,
     },
     text: {
-      paddingRight: 20,
+      paddingRight: 10,
       color: COLORS.grey,
       borderRightColor: COLORS.grey,
       borderRightWidth: 1,
