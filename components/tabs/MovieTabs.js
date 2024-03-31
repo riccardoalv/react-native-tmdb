@@ -1,26 +1,11 @@
 import React, { useState } from "react";
 import { TouchableOpacity, FlatList, Text, View } from "react-native";
-import { COLORS } from "../../constants";
+import styles from "./MovieTabs.style";
 
-function TabButton({ name, activeTab, onHandleSearchType }) {
+function TabButton({ name, activeTab, onPress }) {
   return (
-    <TouchableOpacity
-      style={{
-        borderBottomWidth: 3,
-        borderBottomColor: name === activeTab ? "#3A3F47" : COLORS.background,
-        marginBottom: 30,
-      }}
-      onPress={onHandleSearchType}
-    >
-      <Text
-        style={{
-          fontSize: 20,
-          color: COLORS.text,
-          fontFamily: "Poppins",
-        }}
-      >
-        {name}
-      </Text>
+    <TouchableOpacity style={styles.tab(name, activeTab)} onPress={onPress}>
+      <Text style={styles.text}>{name}</Text>
     </TouchableOpacity>
   );
 }
@@ -36,14 +21,10 @@ const MovieTabs = ({ tabs, activeTab, setActiveTab }) => {
           <TabButton
             name={item}
             activeTab={activeTab}
-            onHandleSearchType={() => setActiveTab(item)}
+            onPress={() => setActiveTab(item)}
           />
         )}
-        contentContainerStyle={{
-          columnGap: 40,
-          marginTop: 50,
-          marginHorizontal: 40,
-        }}
+        contentContainerStyle={styles.container}
         keyExtractor={(item) => item}
       />
     </View>
