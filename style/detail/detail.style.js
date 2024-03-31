@@ -14,15 +14,15 @@ const styles = StyleSheet.create({
   cardAndTitle: {
     flexDirection: "row",
     alignItems: "flex-end",
-    marginHorizontal: 50,
+    marginLeft: 50,
     marginBottom: 25,
   },
   title: {
     flex: 1,
     flexWrap: "wrap",
-    marginHorizontal: 20,
+    marginLeft: 15,
     fontFamily: "PoppinsSemiBold",
-    textAlign: "center",
+    textAlign: "left",
     color: COLORS.text,
     fontSize: 24,
   },

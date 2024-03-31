@@ -3,9 +3,9 @@ import { COLORS, SIZES } from "../../constants";
 
 const styles = StyleSheet.create({
   container: {
-    columnGap: 40,
+    columnGap: 20,
     marginTop: 50,
-    marginHorizontal: 40,
+    marginHorizontal: 20,
   },
   tab: (name, activeTab) => ({
     borderBottomWidth: 3,
