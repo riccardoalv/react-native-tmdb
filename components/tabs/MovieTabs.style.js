@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
   container: {
     columnGap: 20,
     marginTop: 50,
-    marginHorizontal: 20,
+    paddingHorizontal: 30,
   },
   tab: (name, activeTab) => ({
     borderBottomWidth: 3,

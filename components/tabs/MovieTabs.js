@@ -17,6 +17,7 @@ const MovieTabs = ({ tabs, activeTab, setActiveTab }) => {
         data={tabs}
         horizontal
         showsHorizontalScrollIndicator={false}
+        scrollEnabled
         renderItem={({ item }) => (
           <TabButton
             name={item}
