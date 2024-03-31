@@ -122,7 +122,7 @@ export default function Tab() {
                 size={24}
                 color={COLORS.grey}
               />
-              <Text style={styles.movieInfo.text}>{data.runtime}</Text>
+              <Text style={styles.movieInfo.text}>{data.runtime} Minutes</Text>
               <Ionicons
                 style={styles.movieInfo.icon}
                 name="ticket-outline"
