@@ -1,4 +1,5 @@
 import { Image } from "react-native";
+import { SIZES } from "../../constants";
 
 export default function MovieCard({ uri, scale }) {
   return (
@@ -7,9 +8,9 @@ export default function MovieCard({ uri, scale }) {
         uri: uri,
       }}
       style={{
-        height: 146 * scale,
-        width: 100 * scale,
-        borderRadius: 16 * scale,
+        height: SIZES.cards.height * scale,
+        width: SIZES.cards.width * scale,
+        borderRadius: SIZES.cards.borderRadius * scale,
       }}
     />
   );
