@@ -1,13 +1,5 @@
 import React, { useState } from "react";
-import {
-  TouchableOpacity,
-  FlatList,
-  Text,
-  ActivityIndicator,
-  View,
-  Image,
-} from "react-native";
-import styles from "./Reviews.style";
+import { FlatList, Text, ActivityIndicator, View, Image } from "react-native";
 import { COLORS } from "../../constants";
 import fetchReviews from "../../hook/fetchReviews";
 
@@ -20,9 +12,20 @@ const Reviews = ({ id }) => {
         <ActivityIndicator size="large" />
       ) : error ? (
         <Text>Something went wrong</Text>
+      ) : !data.total_results ? (
+        <Text
+          style={{
+            textAlign: "center",
+            color: COLORS.text,
+            fontSize: 30,
+            fontFamily: "Poppins",
+          }}
+        >
+          No Reviews found
+        </Text>
       ) : (
         <FlatList
-          data={data}
+          data={data.results}
           scrollEnabled={false}
           renderItem={({ item }) => (
             <View

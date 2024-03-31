@@ -32,7 +32,7 @@ const fetchReviews = (id) => {
             image + item.author_details.avatar_path);
       });
 
-      setData(response.data.results);
+      setData(response.data);
 
       setIsLoading(false);
     } catch (error) {
