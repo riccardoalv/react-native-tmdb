@@ -24,7 +24,7 @@ const trendingMovies = () => {
     try {
       const response = await axios.request(options);
 
-      const image = "https://image.tmdb.org/t/p/original/";
+      const image = "https://image.tmdb.org/t/p/original";
 
       response.data.results.map((item) => {
         item.poster_path = image + item.poster_path;
