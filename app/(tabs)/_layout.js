@@ -2,10 +2,13 @@ import React from "react";
 import { Octicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
 import { HomeIcon, SearchIcon, BookmarkIcon } from "../../assets/icons";
+import { COLORS } from "../../constants";
 
 export default function TabLayout() {
   return (
-    <Tabs screenOptions={{ tabBarActiveTintColor: "#0296E5" }}>
+    <Tabs
+      screenOptions={{ tabBarActiveTintColor: COLORS.tabBar.activeTintColor }}
+    >
       <Tabs.Screen
         name="index"
         options={{
