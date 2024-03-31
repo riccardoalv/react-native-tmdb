@@ -1,8 +1,8 @@
 import * as React from "react";
 import Svg, { Path } from "react-native-svg";
 
-const BookmarkIcon = ({ color }) => (
-  <Svg xmlns="http://www.w3.org/2000/svg" width={22} height={24} fill="none">
+const BookmarkIconFilled = ({ color }) => (
+  <Svg xmlns="http://www.w3.org/2000/svg" width={22} height={24} fill={color}>
     <Path
       stroke={color}
       strokeLinecap="round"
@@ -13,4 +13,4 @@ const BookmarkIcon = ({ color }) => (
     />
   </Svg>
 );
-export default BookmarkIcon;
+export default BookmarkIconFilled;

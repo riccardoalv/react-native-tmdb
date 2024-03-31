@@ -1,12 +1,12 @@
 import * as React from "react";
 import Svg, { Ellipse, Path } from "react-native-svg";
 
-const SearchIcon = (color) => (
+const SearchIcon = ({ color }) => (
   <Svg xmlns="http://www.w3.org/2000/svg" width={20} height={22} fill="none">
     <Ellipse
       cx={9.789}
       cy={10.767}
-      stroke={color.color}
+      stroke={color}
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={2}
@@ -14,7 +14,7 @@ const SearchIcon = (color) => (
       ry={8.989}
     />
     <Path
-      stroke={color.color}
+      stroke={color}
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={2}

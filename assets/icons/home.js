@@ -1,10 +1,10 @@
 import * as React from "react";
 import Svg, { Path } from "react-native-svg";
 
-const HomeIcon = (color) => (
+const HomeIcon = ({ color }) => (
   <Svg xmlns="http://www.w3.org/2000/svg" width={20} height={22} fill="none">
     <Path
-      stroke={color.color}
+      stroke={color}
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={2}
