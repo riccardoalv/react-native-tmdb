@@ -18,9 +18,11 @@ const styles = StyleSheet.create({
     marginBottom: 25,
   },
   title: {
-    margin: 20,
+    flex: 1,
+    flexWrap: "wrap",
+    marginHorizontal: 20,
     fontFamily: "PoppinsSemiBold",
-    textAlign: "right",
+    textAlign: "center",
     color: COLORS.text,
     fontSize: 24,
   },

@@ -5,7 +5,7 @@ export const SIZES = {
     borderRadius: 16,
   },
   posterImage: {
-    height: 300,
+    height: 250,
   },
   detailScaleFactor: 1.2,
 };
