@@ -1,5 +1,4 @@
 import React from "react";
-import { Octicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
 import { HomeIcon, SearchIcon, BookmarkIcon } from "../../assets/icons";
 import { COLORS } from "../../constants";
@@ -11,6 +10,7 @@ export default function TabLayout() {
         tabBarActiveTintColor: COLORS.blue,
         headerShadowVisible: false,
         headerTintColor: COLORS.titleText,
+        headerTitleAlign: "center",
         headerStyle: {
           backgroundColor: COLORS.background,
           borderBottomWidth: 0,

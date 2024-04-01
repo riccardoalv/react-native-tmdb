@@ -1,7 +1,7 @@
 import { Image } from "react-native";
 import { SIZES } from "../../constants";
 
-export default function MovieCard({ uri, scale }) {
+export default function MovieCard({ uri, scale, margin }) {
   return (
     <Image
       source={{
@@ -11,6 +11,7 @@ export default function MovieCard({ uri, scale }) {
         height: SIZES.cards.height * scale,
         width: SIZES.cards.width * scale,
         borderRadius: SIZES.cards.borderRadius * scale,
+        margin: margin,
       }}
     />
   );
