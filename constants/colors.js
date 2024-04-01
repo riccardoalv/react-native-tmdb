@@ -8,4 +8,8 @@ export const COLORS = {
   tabs: {
     activeTab: "#3A3F47",
   },
+  search: {
+    background: "#3A3F47",
+    text: "#67686D",
+  },
 };
