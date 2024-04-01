@@ -32,13 +32,16 @@ export default function GridMovies({ data, isLoading, error }) {
               onPress={() => {
                 router.push(`/movie/${item.id}`);
               }}
+              style={{
+                marginTop: 20,
+              }}
             >
               <MovieCard uri={item.poster_path} scale={1.2} margin={"2%"} />
             </TouchableOpacity>
           )}
           keyExtractor={(item) => item.id}
           contentContainerStyle={{
-            justifyContent: "space-between",
+            justifyContent: "center",
           }}
         />
       )}
