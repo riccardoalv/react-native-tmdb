@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import { useEffect, useState } from "react";
 import { COLORS, SIZES } from "../../constants";
-import { MovieCard, MovieTabs } from "../../components";
+import { MovieCard, MovieTabs, SearchBar } from "../../components";
 import { useRouter } from "expo-router";
 import trendingMovies from "../../hook/trendingMovies";
 import { GridMovies } from "../../components";
@@ -19,6 +19,8 @@ import upcomingMovies from "../../hook/upcomingMovies";
 
 export default function Tab() {
   const router = useRouter();
+
+  const [searchTerm, setsearchTerm] = useState("");
 
   const { data, isLoading, error } = trendingMovies();
 
@@ -76,7 +78,9 @@ export default function Tab() {
       <View
         style={{
           margin: 30,
-          marginTop: 50,
+          marginTop: 80,
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
         <Text
@@ -89,6 +93,9 @@ export default function Tab() {
         >
           Watch do you want to watch?
         </Text>
+
+        <SearchBar searchTerm={searchTerm} setsearchTerm={setsearchTerm} />
+
         {isLoading ? (
           <ActivityIndicator size="large" color={COLORS.primary} />
         ) : error ? (
@@ -122,7 +129,7 @@ export default function Tab() {
               </>
             )}
             keyExtractor={(item) => item.id}
-            contentContainerStyle={{ columnGap: 20 }}
+            contentContainerStyle={{ columnGap: 20, marginTop: 50 }}
             horizontal
           />
         )}

@@ -103,7 +103,9 @@ export default function Tab() {
           >
             <View style={styles.rating.container}>
               <Feather name="star" size={20} color={COLORS.golden} />
-              <Text style={styles.rating.text}>{data.vote_average}</Text>
+              <Text style={styles.rating.text}>
+                {data.vote_average.toFixed(1)}
+              </Text>
             </View>
             <View style={styles.cardAndTitle}>
               <MovieCard
