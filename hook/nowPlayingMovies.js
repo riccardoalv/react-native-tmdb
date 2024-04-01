@@ -3,7 +3,7 @@ import axios from "axios";
 
 const API_TOKEN = process.env.API_TOKEN;
 
-const trendingMovies = () => {
+const nowPlayingMovies = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -53,4 +53,4 @@ const trendingMovies = () => {
   return { data, isLoading, error, refetch };
 };
 
-export default trendingMovies;
+export default nowPlayingMovies;
